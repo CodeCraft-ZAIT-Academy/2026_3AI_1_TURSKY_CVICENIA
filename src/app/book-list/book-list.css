@@ -7,3 +7,10 @@ h2 {
   margin-bottom: 8px;
   color: #334155;
 }
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
