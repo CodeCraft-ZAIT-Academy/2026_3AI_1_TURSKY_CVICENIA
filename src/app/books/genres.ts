@@ -1,0 +1,61 @@
+export const GENRES: string[] = [
+  'Adventure',
+  'Biography',
+  'Business',
+  "Children's Literature",
+  'Classic',
+  'Comedy',
+  'Comic',
+  'Detective',
+  'Drama',
+  'Fantasy',
+  'Graphic Novel',
+  'Historical Fiction',
+  'Horror',
+  'Memoir',
+  'Mystery',
+  'Mythology',
+  'Philosophy',
+  'Poetry',
+  'Psychology',
+  'Religion',
+  'Romance',
+  'Science Fiction',
+  'Thriller',
+  'Western',
+  'Young Adult'
+];
+
+const GENRE_COLORS: Record<string, string> = {
+  Adventure: '#ea580c',
+  Biography: '#2563eb',
+  Business: '#0f766e',
+  "Children's Literature": '#16a34a',
+  Classic: '#92400e',
+  Comedy: '#ca8a04',
+  Comic: '#db2777',
+  Detective: '#4f46e5',
+  Drama: '#be123c',
+  Dystopia: '#475569',
+  Fantasy: '#7c3aed',
+  Fiction: '#0891b2',
+  'Graphic Novel': '#c026d3',
+  'Historical Fiction': '#a16207',
+  Horror: '#b91c1c',
+  Memoir: '#0369a1',
+  Mystery: '#ca8a04',
+  Mythology: '#9333ea',
+  Philosophy: '#0f766e',
+  Poetry: '#db2777',
+  Psychology: '#4f46e5',
+  Religion: '#15803d',
+  Romance: '#db2777',
+  'Science Fiction': '#0891b2',
+  Thriller: '#dc2626',
+  Western: '#854d0e',
+  'Young Adult': '#7c3aed'
+};
+
+export function getGenreColor(genre: string): string {
+  return GENRE_COLORS[genre] ?? '#94a3b8';
+}
