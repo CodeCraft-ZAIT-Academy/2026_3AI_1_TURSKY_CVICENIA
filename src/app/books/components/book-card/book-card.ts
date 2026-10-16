@@ -3,9 +3,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Book } from '../../book';
-import { getGenreColor } from '../../genres';
+import { getGenreColor } from '../../genre-colors';
 import { BookDetail } from '../book-detail/book-detail';
 import { BookForm } from '../book-form/book-form';
+
 
 
 @Component({
@@ -28,8 +29,8 @@ export class BookCard {
   
  
   genreColor(): string {
-    return getGenreColor(this.book().genre);
-  }
+  return getGenreColor(this.book().genre);
+}
 
   borrow(): void {
     this.borrowed.emit();
