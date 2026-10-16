@@ -25,9 +25,8 @@ export class BookCard {
     this.showDetails = !this.showDetails;
   }
 
-  toggleFavorite(): void {
-    this.book().favorite = !this.book().favorite;
-  }
+  
+ 
   genreColor(): string {
     return getGenreColor(this.book().genre);
   }
@@ -72,4 +71,10 @@ export class BookCard {
   confirmDelete(): void {
     this.deleted.emit();
   }
+
+  favoriteToggled = output<void>();
+
+toggleFavorite(): void {
+  this.favoriteToggled.emit();
+}
 }
