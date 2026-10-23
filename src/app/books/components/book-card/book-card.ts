@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -6,8 +6,6 @@ import { Book } from '../../book';
 import { getGenreColor } from '../../genre-colors';
 import { BookDetail } from '../book-detail/book-detail';
 import { BookForm } from '../book-form/book-form';
-
-
 
 @Component({
   selector: 'app-book-card',
@@ -20,17 +18,15 @@ export class BookCard {
   borrowed = output<void>();
   returned = output<void>();
 
-  showDetails: boolean = false;
+  readonly showDetails = signal(false);
 
   toggleDetails(): void {
-    this.showDetails = !this.showDetails;
+    this.showDetails.update((open) => !open);
   }
 
-  
- 
   genreColor(): string {
-  return getGenreColor(this.book().genre);
-}
+    return getGenreColor(this.book().genre);
+  }
 
   borrow(): void {
     this.borrowed.emit();
@@ -42,31 +38,31 @@ export class BookCard {
 
   edited = output<Book>();
 
-  editing: boolean = false;
+  readonly editing = signal(false);
 
   startEdit(): void {
-    this.editing = true;
+    this.editing.set(true);
   }
 
   saveEdit(book: Book): void {
     this.edited.emit(book);
-    this.editing = false;
+    this.editing.set(false);
   }
 
   cancelEdit(): void {
-    this.editing = false;
+    this.editing.set(false);
   }
 
   deleted = output<void>();
 
-  confirmingDelete: boolean = false;
+  readonly confirmingDelete = signal(false);
 
   askDelete(): void {
-    this.confirmingDelete = true;
+    this.confirmingDelete.set(true);
   }
 
   cancelDelete(): void {
-    this.confirmingDelete = false;
+    this.confirmingDelete.set(false);
   }
 
   confirmDelete(): void {
@@ -75,7 +71,7 @@ export class BookCard {
 
   favoriteToggled = output<void>();
 
-toggleFavorite(): void {
-  this.favoriteToggled.emit();
-}
+  toggleFavorite(): void {
+    this.favoriteToggled.emit();
+  }
 }
