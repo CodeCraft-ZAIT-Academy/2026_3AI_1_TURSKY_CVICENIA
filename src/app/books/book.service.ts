@@ -96,7 +96,7 @@ export class BookService {
     );
   }
 
-  ttoggleFavorite(id: number): void {
+  toggleFavorite(id: number): void {
     this._books.update((books) =>
       books.map((book) => (book.id === id ? { ...book, favorite: !book.favorite } : book)),
     );
