@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "api": "json-server --watch db.json --port 3000",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:p1": "node dist/p1/server/server.mjs"
+    "create:component": "ng generate component ",
+    "serve:ssr:p1": "node dist/p1/server/server.mjs",
+    "gen": "ng g c books/components/server-book-list"
   },
   "private": true,
   "packageManager": "npm@12.0.2",
@@ -34,6 +37,7 @@
     "@types/express": "^5.0.1",
     "@types/node": "^22.12.0",
     "jsdom": "^30.0.0",
+    "json-server": "^0.17.4",
     "prettier": "^3.8.1",
     "typescript": "~6.0.2",
     "vitest": "^5.0.0"

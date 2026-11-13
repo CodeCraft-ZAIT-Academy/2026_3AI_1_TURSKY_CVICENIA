@@ -1,4 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { ServerBookList } from '../server-book-list/server-book-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -18,6 +19,7 @@ import { BookService } from '../../book.service';
   imports: [
     BookCard,
     BookForm,
+    ServerBookList,
     //Cart,
     FormsModule,
     MatButtonModule,

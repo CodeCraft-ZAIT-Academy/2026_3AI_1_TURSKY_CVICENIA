@@ -46,6 +46,9 @@
       }
     </mat-form-field>
 
+    
+
+
     <mat-button-toggle-group name="availability" [ngModel]="availability()"
       (ngModelChange)="availability.set($event); firstPage()">
       <mat-button-toggle value="all">Všetky</mat-button-toggle>
@@ -63,6 +66,9 @@
       </mat-select>
     </mat-form-field>
   </div>
+
+  <app-server-book-list />
+
 
   @if (visibleBooks().length > 0) {
   <p>Zobrazené knihy {{ firstShown() }} – {{ lastShown() }} z {{ visibleBooks().length }}</p>
